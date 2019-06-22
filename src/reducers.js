@@ -8,6 +8,7 @@ const initialState = {
 function areaReducer(state=initialState, {type}) {
   switch (type) {
     case addArea.toString():
+      console.log('reducer: add')
       return { ...state, count: state.count + 1 }
     case removeArea.toString():
       return { ...state, count: state.count - 1 }
