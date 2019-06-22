@@ -1,6 +1,6 @@
 import { eventChannel } from 'redux-saga';
 import { call, delay, fork, takeLatest, put } from 'redux-saga/effects';
-import { ADD_AREA, REMOVE_AREA } from './actions';
+import { addArea, removeArea } from './actions';
 
 function* addCounter() {
    try {
@@ -12,5 +12,5 @@ function* addCounter() {
 
 export default function* rootSaga() {
   // yield fork(areaWatcher);
-  yield takeLatest(ADD_AREA, addCounter)
+  yield takeLatest(addArea, addCounter)
 }

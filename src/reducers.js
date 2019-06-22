@@ -1,20 +1,16 @@
 import { combineReducers } from 'redux';
-import { ADD_AREA, REMOVE_AREA } from './actions';
+import { addArea, removeArea } from './actions';
 
 const initialState = {
-  area: {
-    count: 0,
-  }
+  count: 0,
 }
 
-function areaReducer(state=initialState.area, {type}) {
+function areaReducer(state=initialState, {type}) {
   switch (type) {
-    case ADD_AREA:
-      console.log('add')
-      return
-    case REMOVE_AREA:
-      console.log('remove')
-      return
+    case addArea.toString():
+      return { ...state, count: state.count + 1 }
+    case removeArea.toString():
+      return { ...state, count: state.count - 1 }
   }
   return initialState;
 }

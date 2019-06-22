@@ -1,4 +1,4 @@
 import { createAction } from 'redux-actions';
 
-export const ADD_AREA = 'ADD_AREA';
-export const REMOVE_AREA = 'ADD_AREA';
+export const addArea = createAction('ADD_AREA');
+export const removeArea = createAction('ADD_AREA');
