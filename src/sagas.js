@@ -66,7 +66,8 @@ function* eventChannelTask() {
   const channel = yield call(addAreaChanFunc)
 
   while (true) {
-    yield take(channel)
+    const time = yield take(channel)
+    console.log('emitted time: ', time)
     console.log('take task: start')
     const startTime = new Date()
     yield delay(2000);
